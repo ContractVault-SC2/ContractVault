@@ -12,7 +12,7 @@ load_dotenv()
 app = Flask(__name__, static_folder="static", template_folder="templates")
 
 # wkhtmltopdf binary path
-WKHTMLTOPDF_PATH = r"D:\wkhtmltopdf\bin\wkhtmltopdf.exe"
+WKHTMLTOPDF_PATH = "/usr/bin/wkhtmltopdf"
 config = pdfkit.configuration(wkhtmltopdf=WKHTMLTOPDF_PATH)
 
 # PDF options
@@ -238,3 +238,4 @@ def accept_contract():
         return jsonify({"ok": False, "error": str(e)}), 500
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
+
