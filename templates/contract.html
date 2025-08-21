@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Service Contract</title>
+    <style>
+        /* General Body Styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6; /* bg-gray-100 */
+            margin: 0;
+            
+        }
+
+        /* Main Container */s
+        .contract-container {
+            width: 100%; /* max-w-sd4xl */
+            height: 100vh; /* h-screen */
+            background-color: #ffffff; /* bg-white */
+            
+            border: none;
+            box-shadow: none;
+        }
+
+        /* Header */
+        .header {
+            display: block;
+            text-align: center;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 2rem; /* mb-12 */
+        }
+        .header-title {
+            font-size: 2rem; /* text-3xl */
+            line-height: 2.25rem;
+            text-align: center;
+            font-weight: 700; /* font-bold */
+            color: #1f2937; /* text-gray-800 */
+        }
+        .logo-section {
+            display: block;
+            
+            align-items: center;
+            gap: 0.75rem; /* gap-3 */
+        }
+       
+      
+        .logo-text-main {
+            font-weight: 700; /* font-bold */
+            font-size: 1rem; /* text-lg */
+            color: #374151; /* text-gray-700 */
+        }
+       
+
+        /* Meta Info Section */
+        .meta-grid {
+            display: block;            /* gap-6 */
+            margin-bottom: 2.5rem; /* mb-10 */
+        }
+
+        .meta-grid::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .meta-item1 {
+            display: block; /* Make it a block element */
+            width: 50%;     /* Set a width less than 50% */
+            float: left;    /* Float it to the left */
+        }
+        .meta-item2 {
+            display: block; /* Make it a block element */
+            text-align: right;
+            float: right;    /* Float it to the left */
+        }
+        
+        /* Intro Paragraph */
+        .intro-paragraph {
+            margin-bottom: 2.5rem; /* mb-10 */
+            color: #374151; /* text-gray-700 */
+        }
+
+        /* Section Titles */
+        .section-title {
+            font-size: 1.25rem; /* text-xl */
+            font-weight: 700; /* font-bold */
+            border-bottom: 2px solid #22c55e; /* border-b-2 border-green-500 */
+            padding-bottom: 0.25rem; /* pb-1 */
+            margin-bottom: 1rem; /* mb-4 */
+        }
+        
+        .details-container::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+            /* This is the style for each column (Freelancer and Client) */
+        .party-column1 {
+            display: block; /* Make it a block element */
+            width: 50%;     /* Each column takes up half the space */
+            float: left;    /* Pushes the blocks side-by-side */
+            box-sizing: border-box; /* Ensures padding doesn't break the layout */
+            padding-right: 20px; /* Adds some space between columns */
+        }
+
+        .party-column2 {
+            display: block; /* Make it a block element */
+            width: 50%;     /* Each column takes up half the space */
+            float: right;    /* Pushes the blocks side-by-side */
+            box-sizing: border-box; /* Ensures padding doesn't break the layout */
+            padding-left: 40px; /* Adds some space between columns */
+        }
+
+        /* General Grid for Layout */
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 1.5rem; /* gap-6 */
+        }
+        
+        /* Footer/Signatures */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr)); /* Always 2 columns */
+            gap: 3rem; /* gap-12 */
+            margin-top: 3rem; /* mt-12 */
+        }
+        .signature-table {
+            width: 100%;
+            margin-top: 60px; /* Adjust spacing as needed */
+        }
+
+        .signature-box {
+            width: 50%;
+            text-align: center;
+            vertical-align: bottom; /* Aligns the content to the bottom */
+        }
+
+        .signature-image-container {
+            height: 80px; /* This creates a fixed space for the image */
+            margin-bottom: 8px; /* Space between image area and the line */
+        }
+
+        .signature-image {
+            max-height: 100%; /* Ensures the image fits within the container */
+            max-width: 180px;
+        }
+
+        .signature-line {
+            border-top: 2px solid #374151; /* Darker, more professional line */
+            padding-top: 8px;
+            display: block;
+            margin: 0 20px; /* Adds some space on the sides of the line */
+        }
+
+
+        
+
+        /* Utility classes */
+        .mt-6 { margin-top: 1.5rem; }
+        b { font-weight: 700; }
+
+        /* Responsive Styles */
+        @media (min-width: 768px) {
+            .header-title {
+                font-size: 2.25rem; /* md:text-4xl */
+                line-height: 2.5rem;
+            }
+            .meta-grid, .details-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)); /* md:grid-cols-2 */
+            }
+        }
+        @media (min-width: 640px) {
+            body {
+                padding: 2rem; /* sm:p-8 */
+            }
+            .contract-container {
+                padding: 3rem; /* sm:p-12 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="contract-container">
+    <!-- Header -->
+    <header class="header">
+        <h1 class="header-title">On-Demand Service Agreement</h1>
+        <div class="logo-section">
+            <div>
+                <p class="logo-text-main">Generated by Contract Vault</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Meta -->
+    <div class="meta-grid">
+        <div class="meta-item1"><b>Contract ID:</b>{{ contractId }}</div>
+        <div class="meta-item2"><b>Date:</b>{{ date }}</div>
+    </div>
+
+    <!-- Intro -->
+    <p class="intro-paragraph">
+        This Freelance Service Agreement is made between 
+        <b>{{ freelancer_name }}</b> and <b>{{ client_name }}</b> 
+        of <b>{{ agency_name }} </b>to ensure fair trade..
+    </p>
+
+    <!-- Freelancer -->
+    <h2 class="section-title">PARTY DETAILS</h2>
+    <div class="details-container">
+        <div class="party-column1">
+            <p><b>Freelancer:</b> {{ freelancer_name }}</p>
+            <p><b>Email:</b> {{ freelancer_email }}</p>
+        </div>
+        <div class="party-column2">
+            <p><b>Client:</b> {{ client_name }}</p>
+            <p><b>Email:</b> {{ client_email }}</p>
+        </div>
+    </div>
+
+    <!-- Project -->
+    <h2 class="section-title mt-6">PROJECT INFORMATION</h2>
+    <p>{{ project_description }}</p>
+
+    <!-- Clauses -->
+    <h2 class="section-title mt-6">CLAUSES</h2>
+    <ul class="clauses-list">
+        {% for clause in clauses %}
+            <li>{{ clause }}</li>
+        {% endfor %}
+    </ul>
+
+    <!-- Dates & Amount -->
+    <div class="details-grid mt-6">
+        <div><b>End Date:</b> {{ end_date }}</div>
+        <div><b>Total Amount:</b> {{ total_amount }}</div>
+    </div>
+
+    <!-- Signatures -->
+    <footer class="footer-grid">
+        <!-- Signatures -->
+        <table class="signature-table">
+            <tr>
+                <td class="signature-box">
+                    <div class="signature-image-container">
+                        {% if signatureUser %}
+                            <img src="{{ signatureUser }}" alt="Freelancer Signature" class="signature-image">
+                        {% endif %}
+                    </div>
+                    <span class="signature-line">Signature of Freelancer</span>
+                </td>
+                <td class="signature-box">
+                    <div class="signature-image-container">
+                        {% if signatureClient %}
+                            <img src="{{ signatureClient }}" alt="Client Signature" class="signature-image">
+                        {% endif %}
+                    </div>
+                    <span class="signature-line">Signature of Client</span>
+                </td>
+            </tr>
+        </table>
+    </footer>
+</div>
+
+</body>
+</html>
