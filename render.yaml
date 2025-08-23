@@ -1,10 +1,8 @@
 services:
-  - type: web
-    name: ContractVault-SC-2
-    env: python
-    pythonVersion: '3.11'
-    buildCommand: |
-      apt-get update && apt-get install -y wkhtmltopdf
-      pip install -r requirements.txt
-    startCommand: gunicorn --bind 0.0.0.0:$PORT app:app
-
+  - type: web
+    name: ContractVault-SC-2
+    env: python
+    buildCommand: |
+      apt-get update && apt-get install -y wkhtmltopdf
+      pip install -r requirements.txt
+    startCommand: gunicorn app:app
