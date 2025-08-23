@@ -169,7 +169,7 @@ def get_ai_dispute_verdict(contract_details: dict) -> dict:
 
 # --- 4. FLASK API ENDPOINT FOR PRODUCTION ---
 
-@app.route("/dispute/verify-proof", methods=["POST"])
+@app.route("/verify-proof", methods=["POST"])
 def handle_dispute():
     """Production endpoint. Accepts a JSON body with contract and proof details."""
     try:
@@ -195,3 +195,4 @@ def handle_dispute():
 
 if __name__ == "__main__":
     app.run(debug=True, port=8080)
+
